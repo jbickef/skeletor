@@ -1,5 +1,6 @@
 package com.automation.techassessment.api.endpoints.tv;
 
+import com.automation.techassessment.api.endpoints.movie.MovieGenre;
 import com.automation.techassessment.api.model.*;
 
 import java.util.List;
@@ -10,7 +11,7 @@ public class TVResponse implements TMDbObject {
     private List<CreatedBy> created_by = null;
     private List<Integer> episode_run_time = null;
     private String first_air_date;
-    private List<Genre> genres = null;
+    private List<MovieGenre> genres = null;
     private String homepage;
     private int id;
     private boolean in_production;
@@ -65,11 +66,11 @@ public class TVResponse implements TMDbObject {
         this.first_air_date = first_air_date;
     }
 
-    public List<Genre> getGenres() {
+    public List<MovieGenre> getGenres() {
         return genres;
     }
 
-    public void setGenres(List<Genre> genres) {
+    public void setGenres(List<MovieGenre> genres) {
         this.genres = genres;
     }
 

@@ -34,7 +34,7 @@ public class ApiEndpointDefaults {
         try {
             init();
         } catch (ApiEndpointInitializationError e) {
-            throw new Error(e);
+             throw new Error(e);
         }
     }
 
@@ -48,9 +48,9 @@ public class ApiEndpointDefaults {
      *  instance, you need to call {@link Retrofit#newBuilder()} instead of creating a `new Retrofit.Builder` instance.
      *  {@link ApiEndpoints#newBuilder()} has been created to help ensure others don't trip up on this.
      */
-    private static void init() throws ApiEndpointInitializationError {
-        log = LogManager.getLogger(ApiEndpointDefaults.class);
-        baseUrl = APIPropertyManager.getInstance().getBaseAPIUrl();
+    private static void init() throws ApiEndpointInitializationError {   
+        log = LogManager.getLogger(ApiEndpointDefaults.class);     
+        baseUrl = APIPropertyManager.getInstance().getBaseAPIUrl();      
         if(!baseUrl.startsWith("http")) {
            baseUrl = "https://" + baseUrl;
         }
@@ -59,7 +59,6 @@ public class ApiEndpointDefaults {
         }
         gson = initGson();
         gsonConverterFactory = GsonConverterFactory.create(gson);
-
         httpClient = createNewDefaultHttpClient();
         retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)

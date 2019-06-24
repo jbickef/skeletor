@@ -1,6 +1,6 @@
-package com.automation.techassessment.api.model;
+package com.automation.techassessment.api.endpoints.movie;
 
-public class Genre {
+public class MovieGenre {
 
     private int id;
     private String name;

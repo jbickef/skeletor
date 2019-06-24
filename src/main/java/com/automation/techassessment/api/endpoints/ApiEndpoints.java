@@ -2,6 +2,7 @@ package com.automation.techassessment.api.endpoints;
 
 import com.automation.techassessment.api.UsePort;
 import com.automation.techassessment.api.endpoints.tv.TVEndpoint;
+import com.automation.techassessment.api.endpoints.movie.MovieEndpoint;
 import com.google.gson.Gson;
 import com.automation.techassessment.api.errors.ApiEndpointInitializationError;
 import okhttp3.OkHttpClient;
@@ -26,7 +27,8 @@ public class ApiEndpoints {
     protected OkHttpClient client = null;
     private String baseUrl = null;
     public TVEndpoint tv = null;
-
+    public MovieEndpoint movie = null;
+    
     public static final class Builder {
         private String baseUrl = null;
         private Gson gson = null;
@@ -105,6 +107,7 @@ public class ApiEndpoints {
      */
     public void buildEndpointInstances() {
         tv = createService(TVEndpoint.class);
+        movie = createService(MovieEndpoint.class);
     }
 
     /**
